@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="Invoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="InvoiceHeader">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceNumber" type="xs:string"/>
+              <xs:element name="IssueDate" type="xs:date"/>
+              <xs:element name="InvoiceType" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Supplier">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Address" type="xs:string"/>
+              <xs:element name="TaxNumber" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Customer">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" type="xs:string"/>
+              <xs:element name="Address" type="xs:string"/>
+              <xs:element name="TaxNumber" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceLines">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="InvoiceLine" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="LineNumber" type="xs:integer"/>
+                    <xs:element name="ItemName" type="xs:string"/>
+                    <xs:element name="Quantity" type="xs:decimal"/>
+                    <xs:element name="UnitPrice" type="xs:decimal"/>
+                    <xs:element name="LineNetAmount" type="xs:decimal"/>
+                    <xs:element name="VatRate" type="xs:decimal" minOccurs="0"/>
+                    <xs:element name="LineVatAmount" type="xs:decimal" minOccurs="0"/>
+                    <xs:element name="LineGrossAmount" type="xs:decimal"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="InvoiceSummary">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TotalNetAmount" type="xs:decimal"/>
+              <xs:element name="TotalVatAmount" type="xs:decimal" minOccurs="0"/>
+              <xs:element name="TotalGrossAmount" type="xs:decimal"/>
+              <xs:element name="Currency" type="xs:string"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
