@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Invoice">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="invoiceHead">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="invoiceData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="invoiceNumber" type="xs:string"/>
+										<xs:element name="invoiceIssueDate" type="xs:date"/>
+										<xs:element name="invoiceCategory" type="xs:string"/>
+										<xs:element name="invoiceType" type="xs:string"/>
+										<xs:element name="invoiceNetAmount" type="xs:decimal"/>
+										<xs:element name="invoiceVatAmount" type="xs:decimal"/>
+										<xs:element name="invoiceGrossAmount" type="xs:decimal"/>
+										<xs:element name="currencyCode" type="xs:string"/>
+										<xs:element name="exchangeRate" type="xs:decimal" minOccurs="0"/>
+										<xs:element name="paymentMethod" type="xs:string"/>
+										<xs:element name="paymentDueDate" type="xs:date"/>
+										<xs:element name="invoiceAppearance" type="xs:string"/>
+										<xs:element name="sourceIndicator" type="xs:integer"/>
+										<xs:element name="comment" type="xs:string" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="supplierInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="supplierTaxNumber" type="xs:string"/>
+										<xs:element name="supplierName" type="xs:string"/>
+										<xs:element name="supplierAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="supplierCountryCode" type="xs:string"/>
+													<xs:element name="supplierPostalCode" type="xs:string"/>
+													<xs:element name="supplierCity" type="xs:string"/>
+													<xs:element name="supplierAddressDetail" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="customerInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="customerTaxNumber" type="xs:string" minOccurs="0"/>
+										<xs:element name="customerName" type="xs:string"/>
+										<xs:element name="customerAddress">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="customerCountryCode" type="xs:string"/>
+													<xs:element name="customerPostalCode" type="xs:string"/>
+													<xs:element name="customerCity" type="xs:string"/>
+													<xs:element name="customerAddressDetail" type="xs:string"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="invoiceLines">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="invoiceLine" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="lineNumber" type="xs:integer"/>
+										<xs:element name="lineDescription" type="xs:string"/>
+										<xs:element name="quantity" type="xs:decimal"/>
+										<xs:element name="unitOfMeasure" type="xs:string"/>
+										<xs:element name="unitPrice" type="xs:decimal"/>
+										<xs:element name="lineNetAmount" type="xs:decimal"/>
+										<xs:element name="lineVatRate" type="xs:decimal"/>
+										<xs:element name="lineVatAmount" type="xs:decimal"/>
+										<xs:element name="lineGrossAmount" type="xs:decimal"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
