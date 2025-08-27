@@ -1,0 +1,1 @@
+Okay, I'm ready to process the provided data and generate the regulatory update in Markdown format. Please provide the data consisting of the "## Source" and "## Content" blocks.
