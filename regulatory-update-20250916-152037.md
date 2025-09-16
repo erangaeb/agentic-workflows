@@ -1,0 +1,1 @@
+No source documents were provided. Therefore, I cannot extract any information or produce a detailed update on "denmark e-invoice compliance updates" as requested. Please provide the source documents.
