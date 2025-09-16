@@ -1,0 +1,1 @@
+I am ready to process the input. Please provide the plain-text document containing the source blocks.
