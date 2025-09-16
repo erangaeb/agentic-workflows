@@ -1,0 +1,1 @@
+I cannot generate the requested report without the source content. Please provide the plain-text document containing the '## Source' and '## Content' blocks.
